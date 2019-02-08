@@ -1,0 +1,9 @@
+-- Please write a query that returns a single number value
+-- Example: count the number of sign up
+-- select count(1) from accounts where {{time_where}}
+
+ #standardSQL
+SELECT
+round((trivago_cost+ta_cost+hotelscombined_cost+kayak_cost+skyscanner_cost+hotellook_cost) * (CAST(FORMAT_DATETIME("%k",CURRENT_DATETIME) AS FLOAT64)/24), 0)
+FROM analyst.metasearch_cost
+WHERE {{time_where}}
